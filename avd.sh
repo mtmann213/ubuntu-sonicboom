@@ -203,15 +203,18 @@ derive_avd_tenant() {
   fi
 }
 
+FREERDP_BIN=""
+
 print_config() {
   echo "Derived configuration:"
   echo "  RDPW        : $RDPW"
   echo "  AVD_USER    : $AVD_USER"
   echo "  AVD_TENANT  : $AVD_TENANT"
   echo "  MAX_REDIRECTS: $MAX_REDIRECTS"
+  echo "  BINARY      : $FREERDP_BIN"
   echo
   echo "FreeRDP command (for reference):"
-  echo "  sdl-freerdp3 \"$RDPW\" \\"
+  echo "  $FREERDP_BIN \"$RDPW\" \\"
   echo "    /gateway:type:arm \\"
   echo "    /sec:aad \\"
   echo "    /u:\"$AVD_USER\" \\"
@@ -222,64 +225,94 @@ print_config() {
 }
 
 require_runtime_dependencies() {
-  command -v expect >/dev/null 2>&1 || { echo "ERROR: expect not installed (sudo pacman -S expect)" >&2; exit 1; }
-  command -v sdl-freerdp3 >/dev/null 2>&1 || { echo "ERROR: sdl-freerdp3 not found (sudo pacman -S freerdp)" >&2; exit 1; }
+  command -v expect >/dev/null 2>&1 || { echo "ERROR: expect not installed (sudo apt install expect)" >&2; exit 1; }
+  
+  # Search paths for FreeRDP 3 binaries
+  local candidates=(
+    "/opt/freerdp-nightly/bin/xfreerdp3"
+    "/opt/freerdp-nightly/bin/sdl2-freerdp3"
+    "/opt/freerdp-nightly/bin/sdl-freerdp3"
+    "xfreerdp3"
+    "sdl2-freerdp3"
+    "sdl-freerdp3"
+  )
+
+  for c in "${candidates[@]}"; do
+    if command -v "$c" >/dev/null 2>&1; then
+      FREERDP_BIN="$c"
+      break
+    fi
+  done
+
+  if [[ -z "$FREERDP_BIN" ]]; then
+    echo "ERROR: No suitable FreeRDP 3 binary found." >&2
+    echo "Ubuntu 24.04's default packages lack AAD support." >&2
+    echo "Please install freerdp-nightly:" >&2
+    echo "  https://github.com/FreeRDP/FreeRDP/wiki/Pre-build-repositories" >&2
+    exit 1
+  fi
 }
 
 write_expect_script() {
   local tmp="$1"
 
-  cat >"$tmp" <<'EXPECT'
+  cat >"$tmp" <<EXPECT
 set timeout -1
 
-set rdpw $env(RDPW)
-set user $env(AVD_USER)
-set tenant $env(AVD_TENANT)
-set max_redirects $env(MAX_REDIRECTS)
+set rdpw \$env(RDPW)
+set user \$env(AVD_USER)
+set tenant \$env(AVD_TENANT)
+set max_redirects \$env(MAX_REDIRECTS)
+set bin \$env(FREERDP_BIN)
 
 set seen 0
 
-proc open_firefox {url} {
-  catch {exec firefox --private-window $url &}
+proc open_browser {url} {
+  if {[catch {exec google-chrome --incognito \$url &}] == 0} {
+    return
+  }
+  if {[catch {exec firefox --private-window \$url &}] == 0} {
+    return
+  }
 }
 
-spawn -noecho sdl-freerdp3 $rdpw \
-  /gateway:type:arm \
-  /sec:aad \
-  /u:$user \
-  /smartcard \
-  /azure:tenantid:$tenant,use-tenantid:on,ad:login.microsoftonline.us,avd-scope:https://www.wvd.azure.us/.default,avd-access:https://login.microsoftonline.com/common/oauth2/nativeclient \
-  /timeout:600000 \
+spawn -noecho \$bin \$rdpw \\
+  /gateway:type:arm \\
+  /sec:aad \\
+  /u:\$user \\
+  /smartcard \\
+  /azure:tenantid:\$tenant,use-tenantid:on,ad:login.microsoftonline.us,avd-scope:https://www.wvd.azure.us/.default,avd-access:https://login.microsoftonline.com/common/oauth2/nativeclient \\
+  /timeout:600000 \\
   /log-level:INFO
 
 while {1} {
   expect {
-    -re {Browse to:\s+(https?://\S+)} {
-      set url $expect_out(1,string)
-      send_user "\nFreeRDP auth URL:\n$url\n"
-      open_firefox $url
+    -re {Browse to:\\s+(https?://\\S+)} {
+      set url \$expect_out(1,string)
+      send_user "\nFreeRDP auth URL:\n\$url\n"
+      open_browser \$url
       exp_continue
     }
 
     -re {Paste redirect URL here:} {
       incr seen
-      if {$seen > $max_redirects} {
-        send_user "\nToo many redirect rounds ($seen). Exiting.\n"
+      if {\$seen > \$max_redirects} {
+        send_user "\nToo many redirect rounds (\$seen). Exiting.\n"
         exit 2
       }
 
       send_user "\nPaste the FULL redirect URL (must include ?code=...) then press Enter:\n> "
       set tty [open "/dev/tty" r]
-      gets $tty redir
-      close $tty
+      gets \$tty redir
+      close \$tty
 
-      send "$redir\r"
+      send "\$redir\r"
       exp_continue
     }
 
     eof {
       catch wait result
-      exit [lindex $result 3]
+      exit [lindex \$result 3]
     }
   }
 }
@@ -289,13 +322,13 @@ EXPECT
 run_connection() {
   local tmp
 
-  export RDPW AVD_USER AVD_TENANT MAX_REDIRECTS
+  export RDPW AVD_USER AVD_TENANT MAX_REDIRECTS FREERDP_BIN
 
-  tmp="$(mktemp --suffix=.exp)"
-  trap 'rm -f "$tmp"' EXIT
+  tmp="\$(mktemp --suffix=.exp)"
+  trap 'rm -f "\$tmp"' EXIT
 
-  write_expect_script "$tmp"
-  expect -f "$tmp"
+  write_expect_script "\$tmp"
+  expect -f "\$tmp"
 }
 
 main() {
