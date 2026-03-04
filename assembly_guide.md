@@ -1,7 +1,7 @@
 # Standard Operating Procedure: System Assembly & Integration
-**Project: "A40 Deep-Scan" | High-Performance SIGINT/EW Rack**
+**Project: "APEX PROWLER" | High-Performance SIGINT/EW Rack**
 
-This SOP details the technical sequence for constructing the A40 Deep-Scan environment. Follow these steps to ensure thermal stability, electrical safety, and signal integrity.
+This SOP details the technical sequence for constructing the APEX PROWLER environment. Follow these steps to ensure thermal stability, electrical safety, and signal integrity.
 
 ---
 

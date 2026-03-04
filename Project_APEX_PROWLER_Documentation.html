@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Project APEX PROWLER Documentation</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css" />
+  <style>body { box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; } .markdown-body { box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Project APEX PROWLER Documentation</h1>
+</header>
+<h1 id="master-shopping-list-high-performance-sigintew-system">MASTER
+SHOPPING LIST: High-Performance SIGINT/EW System</h1>
+<p><strong>Project: “APEX PROWLER” | Budget Strategy: Required
+vs. Optional</strong></p>
+<p>This document details the procurement authority for the APEX PROWLER
+system. Prices and links are verified as of early 2026 (Verified March
+2026).</p>
+<hr />
+<h1 id="part-i-minimum-required-list">PART I: MINIMUM REQUIRED LIST</h1>
+<p><em>These items constitute the minimum viable high-performance system
+for ingest, processing, and control.</em></p>
+<h2 id="core-mission-hardware-the-brain-sensors">1. Core Mission
+Hardware (The “Brain” &amp; “Sensors”)</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Big Picture / Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://epiqsolutions.com/modules/sidekiq-x4"><strong>Sidekiq X4
+PDK Bundle</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">ES024-101</td>
+<td style="text-align: left;"><strong>Primary Ingest:</strong> Includes
+X4 card, TB3 chassis, FPGA carrier, and Dev Laptop.</td>
+<td style="text-align: left;">$51,544</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://epiqsolutions.com/modules/sidekiq-x4"><strong>Sidekiq
+Maintenance</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">ES024-599-1</td>
+<td style="text-align: left;"><strong>Support:</strong> 1 additional
+year of maintenance/support (2 years total).</td>
+<td style="text-align: left;">$4,779</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.crystalrugged.com/products/rugged-servers/rs378-rugged-3u-server/"><strong>Crystal
+3U GPU Server</strong></a></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">CMS-00891 (Dual A40)</td>
+<td style="text-align: left;"><strong>DSP/ML Engine:</strong> Rugged
+hosts for NVIDIA A40s. <em>Estimated @ $95k/ea.</em></td>
+<td style="text-align: left;">$190,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.ettus.com/all-products/usrp-n310/"><strong>USRP
+N310</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Ettus 785067-01</td>
+<td style="text-align: left;"><strong>High-Fidelity Sensor:</strong>
+4-channel phase-coherent SDR.</td>
+<td style="text-align: left;">$20,826</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.alldataresource.com/CommScope-ICX7850-48F-E2-Fiber-Aggregation-Switch-48sfpsfp28-1025gbps-Ports_p_642646.html"><strong>Ruckus
+ICX Switch</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">ICX7850-48F-E2</td>
+<td style="text-align: left;"><strong>The Backplane:</strong> 40/100GbE
+data mover.</td>
+<td style="text-align: left;">$17,689</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.keysight.com/us/en/product/N5182A/mxg-vector-signal-generator-100-khz-to-6-ghz.html"><strong>Keysight
+MXG</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">N5182A-506</td>
+<td style="text-align: left;"><strong>Validation:</strong> Vector Signal
+Generator for calibration. <em>Refurbished/Certified.</em></td>
+<td style="text-align: left;">$12,500</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://satcomsolutions.org/product/brandywine-nfs220-10-mhz-reference-gps-synchronized-clock/"><strong>Brandywine
+NFS220</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">95000001</td>
+<td style="text-align: left;"><strong>Grandmaster Clock:</strong>
+Ultra-stable 10MHz/1PPS.</td>
+<td style="text-align: left;">$4,200</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.ettus.com/all-products/ub210-kit/"><strong>USRP
+B210</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Ettus B210</td>
+<td style="text-align: left;"><strong>Local Monitoring:</strong>
+Portable SDR for bench testing.</td>
+<td style="text-align: left;">$1,600</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.sealevel.com/ultra-comm-8-pcie-pci-express-8-port-rs-232-rs-422-rs-485-serial-interface/"><strong>SeaLevel
+Serial Card</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">7804EC</td>
+<td style="text-align: left;"><strong>System Control:</strong> Interface
+for external sensors/rotors.</td>
+<td style="text-align: left;">$487</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.truenas.com/m-series/"><strong>Archival Storage
+Node</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">4U 24-Bay Server (120TB)</td>
+<td style="text-align: left;"><strong>Capacity Tier:</strong> Long-term
+storage for mission data.</td>
+<td style="text-align: left;">$16,500</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Shipping &amp;
+Handling</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Quote #342624</td>
+<td style="text-align: left;">Procurement logistics for Sidekiq
+PDK.</td>
+<td style="text-align: left;">$284</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>SUBTOTAL SECTION 1</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>$320,409</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="timing-power-infrastructure">2. Timing &amp; Power
+Infrastructure</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.talleycom.com/product/MXRGPS-TMG-HR-26N"><strong>GPS
+Timing Antenna</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">PCTEL GPS-TMG-HR-26N</td>
+<td style="text-align: left;"><strong>REQUIRED:</strong> High-rejection
+antenna for GPS L1 lock.</td>
+<td style="text-align: left;">$237</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.timesmicrowave.com/LMR-240"><strong>LMR-240 Coax
+(50ft)</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">N(M) to BNC(M)</td>
+<td style="text-align: left;">Low-loss antenna feed cable.</td>
+<td style="text-align: left;">$120</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.meanwell.com/webapp/product/search.aspx?prod=RCP-1000"><strong>Mean
+Well 12V PSU</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">RCP-1000-12 (1U)</td>
+<td style="text-align: left;">Clean DC source for USRP N310.</td>
+<td style="text-align: left;">$320</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.meanwell.com/webapp/product/search.aspx?prod=RCP-1UI"><strong>Mean
+Well 1U Shelf</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">RCP-1UI</td>
+<td style="text-align: left;">Secure mounting for the DC supply.</td>
+<td style="text-align: left;">$210</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.tripplite.com/metered-pdu-20a-120v-1u-rackmount-l5-20p-12-5-15-20r-outlets~PDUMH20"><strong>Tripp-Lite
+20A PDU</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">PDUMH20 (Metered)</td>
+<td style="text-align: left;">Rack power distribution and
+monitoring.</td>
+<td style="text-align: left;">$350</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>SUBTOTAL SECTION 2</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>$1,237</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="physical-mounting-housing">3. Physical Mounting &amp;
+Housing</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.server-rack-online.com/ar3104/"><strong>24U Deep
+Server Rack</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">APC AR3104</td>
+<td style="text-align: left;">42” deep enclosure for GPU chassis.</td>
+<td style="text-align: left;">$2,029</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.ettus.com/all-products/usrp-n3xx-rack-mount-accessory/"><strong>USRP
+N3xx Rack Kit</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Ettus 786467-01</td>
+<td style="text-align: left;">Adapts half-wide N310 to 1U rack
+slot.</td>
+<td style="text-align: left;">$610</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.newark.com/keysight-technologies/1cm010a/1cm010a-rack-mount-flange-kit/dp/05X9265"><strong>Keysight
+2U Rack Kit</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Keysight 1CM010A</td>
+<td style="text-align: left;">Adapts MXG benchtop unit to rack
+rails.</td>
+<td style="text-align: left;">$153</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.startech.com/en-us/server-management/cabscrewm6"><strong>M6
+Rack Hardware</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">50-Pack Cage Nuts</td>
+<td style="text-align: left;">Essential fasteners for rack
+assembly.</td>
+<td style="text-align: left;">$40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.startech.com/en-us/server-management/cantshelf22"><strong>Ventilated
+2U Shelf</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">StarTech Cantilever</td>
+<td style="text-align: left;">Utility space for tools and USRP
+B210.</td>
+<td style="text-align: left;">$60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>SUBTOTAL SECTION 3</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>$2,892</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="connectivity-protection-tools">4. Connectivity, Protection &amp;
+Tools</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.fairviewmicrowave.com/30db-fixed-attenuator-sma-male-sma-female-2-watts-sa18e-30-p.aspx"><strong>30dB
+SMA Attenuators</strong></a></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Signal “Pads”</td>
+<td style="text-align: left;"><strong>HARDWARE SAFETY:</strong> Prevents
+frontend damage.</td>
+<td style="text-align: left;">$150</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.digikey.com/en/products/detail/cinch-connectivity-solutions-johnson/141-0000-929/600196"><strong>SMA
+Torque Wrench</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">8 in-lb Precision</td>
+<td style="text-align: left;">Ensures perfectly seated RF
+connections.</td>
+<td style="text-align: left;">$220</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.fs.com/products/30856.html"><strong>40G QSFP+ Active
+Optical Cable (3m)</strong></a></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><strong>ACTIVE</strong> Interconnect</td>
+<td style="text-align: left;"><strong>Signal Integrity:</strong> Active
+links for zero-error IQ streaming.</td>
+<td style="text-align: left;">$480</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.pasternack.com/bnc-male-sma-male-rg58cu-cable-assembly-pe3067-p.aspx"><strong>BNC
+to SMA Timing</strong></a></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">3ft Shielded Coax</td>
+<td style="text-align: left;">Distributes 10MHz/1PPS heartbeat.</td>
+<td style="text-align: left;">$180</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.fairviewmicrowave.com/ssmc-male-sma-female-cable-rg316-ds-coax-fmc0108316ds-p.aspx"><strong>SSMC
+to SMA Pigtails</strong></a></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">6” LMR-100</td>
+<td style="text-align: left;">Brings Sidekiq’s internal ports to rack
+face.</td>
+<td style="text-align: left;">$250</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.monoprice.com/product?p_id=15147"><strong>Cat6a
+Shielded Patch</strong></a></td>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">1ft/3ft Management</td>
+<td style="text-align: left;">Connects control/management network.</td>
+<td style="text-align: left;">$100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.fs.com/products/66613.html"><strong>10G SFP+ to RJ45
+Transceiver</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Switch-to-Workstation</td>
+<td style="text-align: left;">Required to connect Workstation to Ruckus
+switch.</td>
+<td style="text-align: left;">$65</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>SUBTOTAL SECTION 4</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>$1,445</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="esd-lab-safety-the-insurance">5. ESD &amp; Lab Safety (The
+“Insurance”)</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.uline.com/Product/Detail/H-1132/Anti-Static-Mats/Anti-Static-Table-Mat-2-x-4-Blue"><strong>ESD
+Workstation Kit</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">24x48 Mat + Straps</td>
+<td style="text-align: left;">Protects sensitive silicon during
+assembly.</td>
+<td style="text-align: left;">$450</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.uline.com/BL_42/Static-Shielding-Bags"><strong>ESD
+Shielding Bags</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">10-Pack</td>
+<td style="text-align: left;">Safe storage for removed PCIe blades.</td>
+<td style="text-align: left;">$50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>SUBTOTAL SECTION 5</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>$500</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="system-robustness-upgrades">6. System Robustness Upgrades</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.apc.com/shop/us/en/products/APC-Smart-UPS-SRT-3000VA-RM-120V/P-SRT3000RMXLA"><strong>3kVA
+Rack UPS</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">APC Smart-UPS SRT</td>
+<td style="text-align: left;">Prevents corruption during power
+sags.</td>
+<td style="text-align: left;">$2,800</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.westerndigital.com/products/internal-drives/wd-black-sn850x-nvme-ssd"><strong>NVMe
+Recording Tier</strong></a></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">16TB RAID-0 (Gen4)</td>
+<td style="text-align: left;">Handles 1.6GB/s raw IQ ingest streams.
+<em>Based on $750/8TB.</em></td>
+<td style="text-align: left;">$3,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://acinfinity.com/component-cooling/rack-fan-systems/cloudplate-t1-quiet-rack-cooling-fan-system-1u-exhaust/"><strong>1U
+Fan Tray</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">AC Infinity CLOUDPLATE</td>
+<td style="text-align: left;">Thermal stability for sustained GPU
+loads.</td>
+<td style="text-align: left;">$200</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.raritan.com/products/kvm-switches/dominion-kx-iii"><strong>IP-KVM
+Switch</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Raritan Dominion KX III</td>
+<td style="text-align: left;">Remote BIOS-level system control.</td>
+<td style="text-align: left;">$850</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>SUBTOTAL SECTION 6</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>$6,850</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="operator-interface-control-analysis">7. Operator Interface
+(Control &amp; Analysis)</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.dell.com/en-us/shop/dell-laptops/precision-7680-workstation/spd/precision-16-7680-laptop"><strong>Engineering
+Workstation</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Dell Precision 7680</td>
+<td style="text-align: left;">Primary visualization/ML point
+(i9/64GB/RTX).</td>
+<td style="text-align: left;">$5,800</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.owc.com/solutions/thunderbolt-3-10g-ethernet-adapter"><strong>10GbE
+TB4 Adapter</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">OWC Thunderbolt 3/4</td>
+<td style="text-align: left;">High-BW data ingest for
+visualization.</td>
+<td style="text-align: left;">$220</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.pelican.com/us/en/product/cases/air/1535"><strong>Rugged
+Transit Case</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Pelican 1535 Air</td>
+<td style="text-align: left;">Protective housing for workstation.</td>
+<td style="text-align: left;">$280</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>SUBTOTAL SECTION 7</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>$6,300</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="part-ii-recommended-improvements">PART II: RECOMMENDED
+IMPROVEMENTS</h1>
+<p><em>These items are highly recommended for Full Mission Capability
+(FMC) and advanced RF calibration.</em></p>
+<h2 id="rf-distribution-signal-routing">8. RF Distribution &amp; Signal
+Routing</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.minicircuits.com/WebStore/RF-Switch-Matrices.html"><strong>RF
+Matrix Switch</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">RC-Series USB/Eth</td>
+<td style="text-align: left;">Software-controlled antenna routing.</td>
+<td style="text-align: left;">$2,500</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.pasternack.com/rf-patch-panels-category.aspx"><strong>RF
+Patch Panel</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">1U SMA-to-N Type</td>
+<td style="text-align: left;">Strain relief for sensitive SDR
+ports.</td>
+<td style="text-align: left;">$400</td>
+</tr>
+</tbody>
+</table>
+<h2 id="calibration-mission-software">9. Calibration &amp; Mission
+Software</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://coppermountaintech.com/vnas/m5065-2-port-6-5-ghz-analyzer/"><strong>USB
+VNA</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Copper Mountain M5065</td>
+<td style="text-align: left;">Phase-matching RF paths and antenna
+tuning.</td>
+<td style="text-align: left;">$8,500</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.keysight.com/us/en/products/software/pathwave-signal-generation-analysis-software/pathwave-vector-signal-analysis-vsa-software.html"><strong>Keysight
+VSA Software</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">89601B (Annual Sub)</td>
+<td style="text-align: left;">Gold-standard vector signal analysis.</td>
+<td style="text-align: left;">$12,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.mathworks.com/products/matlab.html"><strong>MATLAB /
+DSP Suite</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Standard + Toolboxes</td>
+<td style="text-align: left;">Advanced DSP and ML prototyping.</td>
+<td style="text-align: left;">$6,000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="environmental-security-spares">10. Environmental Security &amp;
+Spares</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.apc.com/shop/us/en/products/NetBotz-Rack-Monitor-250/P-NBRK0250"><strong>Rack
+Monitor</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">APC NetBotz 250</td>
+<td style="text-align: left;">Real-time temp/humidity health
+monitoring.</td>
+<td style="text-align: left;">$850</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.pasternack.com/adapters-category.aspx"><strong>RF
+“Survival Kit”</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Adapters/Terminators</td>
+<td style="text-align: left;">Essential testing loads and
+connectors.</td>
+<td style="text-align: left;">$800</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.fs.com/products/30856.html"><strong>Spare Cable
+Set</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">DAC/SMA/Cat6a</td>
+<td style="text-align: left;">Critical spares for high-wear
+components.</td>
+<td style="text-align: left;">$1,200</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="part-iii-redundancy-capability-upgrades">PART III: REDUNDANCY
+&amp; CAPABILITY UPGRADES</h1>
+<p><em>These items provide 1:1 hardware failover and enable advanced
+8-channel coherent operations.</em></p>
+<h2 id="redundant-sensors-guard-channels">11. Redundant Sensors &amp;
+Guard Channels</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://epiqsolutions.com/modules/sidekiq-x4"><strong>Sidekiq X4
+PDK (Redundant)</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">ES024-101</td>
+<td style="text-align: left;"><strong>Failover:</strong> 1:1 redundancy.
+Includes 2yr Maint/Ship.</td>
+<td style="text-align: left;">$56,607</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.ettus.com/all-products/usrp-n310/"><strong>USRP N310
+(Secondary)</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Ettus 785067-01</td>
+<td style="text-align: left;"><strong>8-Ch MIMO:</strong> Enables
+high-precision beamforming.</td>
+<td style="text-align: left;">$20,826</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.ettus.com/all-products/ub210-kit/"><strong>USRP B210
+(Guard)</strong></a></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Ettus B210</td>
+<td style="text-align: left;"><strong>Persistent Mon:</strong> Always-on
+monitoring of specific SOIs.</td>
+<td style="text-align: left;">$3,200</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://satcomsolutions.org/product/brandywine-nfs220-10-mhz-reference-gps-synchronized-clock/"><strong>Secondary
+Timing Std.</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Brandywine NFS220</td>
+<td style="text-align: left;"><strong>System Heartbeat:</strong>
+Redundant clock source.</td>
+<td style="text-align: left;">$4,200</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="part-iv-antennas-if-necessary">PART IV: ANTENNAS (IF
+NECESSARY)</h1>
+<p><em>These items are the “ears” of the system, selected based on
+specific mission frequencies.</em></p>
+<h2 id="mission-antennas">12. Mission Antennas</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.diamondantenna.net/d130nj.html"><strong>Wideband
+Discone</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Diamond D130NJ</td>
+<td style="text-align: left;">Omni coverage from 25MHz to 3GHz.</td>
+<td style="text-align: left;">$150</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.dxengineering.com/search/product-line/creative-design-clp5130-series-log-periodic-antennas"><strong>Log-Periodic
+Array</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Creative Design CLP-5130</td>
+<td style="text-align: left;">High-gain directional target
+isolation.</td>
+<td style="text-align: left;">$450</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.aaronia.com/products/antennas/"><strong>4-Channel DF
+Array</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Custom Phase-Coherent</td>
+<td style="text-align: left;">Required for Direction Finding apps.</td>
+<td style="text-align: left;">$3,500</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="budget-summary">BUDGET SUMMARY</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Requirement Level</th>
+<th style="text-align: left;">Subtotal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>PART I: MINIMUM REQUIRED
+LIST</strong></td>
+<td style="text-align: left;"><strong>$339,634</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>PART II: RECOMMENDED
+IMPROVEMENTS</strong></td>
+<td style="text-align: left;"><strong>$32,250</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>PART III: REDUNDANCY &amp;
+CAPABILITY UPGRADES</strong></td>
+<td style="text-align: left;"><strong>$84,833</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>PART IV: ANTENNAS (IF
+NECESSARY)</strong></td>
+<td style="text-align: left;"><strong>$4,100</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>GRAND TOTAL (MAXIMUM
+CAPABILITY)</strong></td>
+<td style="text-align: left;"><strong>$460,817</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="final-technical-notes">Final Technical Notes:</h2>
+<ul>
+<li><strong>Active Optical Cables (AOC):</strong> All high-speed 40G
+links are now specified as Active Optical to ensure signal integrity
+across the rack.</li>
+<li><strong>The Sidekiq Bundle:</strong> Note that the PDK includes a
+dedicated dev laptop. The $5,800 Dell in Part I remains as the primary
+<strong>visualization/10GbE network workstation</strong> for the
+rack.</li>
+<li><strong>Thermal Plan:</strong> GPU servers must be spaced at least
+1U apart; use the CLOUDPLATE fan tray for active exhaust.</li>
+<li><strong>Safety:</strong> Never operate the Keysight MXG without
+verified attenuation in the path.</li>
+<li><strong>Coherence:</strong> All timing cables (BNC-SMA) for the N310
+and Sidekiq must be the exact same length to avoid phase skew.</li>
+<li><strong>Procurement Strategy:</strong> Prioritize the
+<strong>Brandywine NFS220</strong> and <strong>Crystal Servers</strong>
+as they have the longest lead times (8-12 weeks).</li>
+</ul>
+<h1
+id="standard-operating-procedure-system-assembly-integration">Standard
+Operating Procedure: System Assembly &amp; Integration</h1>
+<p><strong>Project: “APEX PROWLER” | High-Performance SIGINT/EW
+Rack</strong></p>
+<p>This SOP details the technical sequence for constructing the APEX
+PROWLER environment. Follow these steps to ensure thermal stability,
+electrical safety, and signal integrity.</p>
+<hr />
+<h2 id="phase-0-esd-safety-preparation-critical">Phase 0: ESD &amp;
+Safety Preparation (CRITICAL)</h2>
+<p><em>Goal: Prevent catastrophic damage to sensitive silicon and RF
+front-ends.</em> 1. <strong>Workstation Setup:</strong> All assembly
+must be performed on an <strong>ESD-dissipative mat</strong> grounded to
+a common point. 2. <strong>Personal Grounding:</strong> Operators
+<strong>must</strong> wear a grounded <strong>ESD wrist strap</strong>
+at all times when handling PCIe blades or opening server chassis. 3.
+<strong>Cable Discharge:</strong> Before connecting any SMA or BNC cable
+to an SDR, touch the outer connector of the cable to the grounded rack
+frame to discharge any built-up static on the cable run. 4.
+<strong>Component Handling:</strong> Hold all PCIe cards (Sidekiq,
+SeaLevel) only by the metal brackets or the edges of the PCB. Never
+touch the gold contact fingers or surface-mount components.</p>
+<hr />
+<h2 id="phase-1-enclosure-heavy-infrastructure">Phase 1: Enclosure &amp;
+Heavy Infrastructure</h2>
+<ol type="1">
+<li><strong>Rack Preparation:</strong> Stabilize the <strong>APC 24U
+Rack</strong>. Install the leveling feet and ensure the rack is grounded
+to the facility’s common ground point.</li>
+<li><strong>Bottom-Up Loading:</strong>
+<ul>
+<li><strong>U1-U6:</strong> Install the sliding rails for the
+<strong>(2) Crystal 3U GPU Servers</strong>. Rack the servers in the
+lowest positions to maintain a low center of gravity.</li>
+<li><strong>U7:</strong> Leave 1U of empty space for thermal
+exhaust.</li>
+<li><strong>U8-U11:</strong> Install the <strong>Archival Storage
+Node</strong> (4U). This unit contains 24 HDDs and is extremely
+heavy.</li>
+<li><strong>U12:</strong> Leave 1U of empty space for thermal
+exhaust.</li>
+<li><strong>U13:</strong> Install the <strong>Ruckus ICX
+Switch</strong>. Ensure the airflow direction (front-to-back) matches
+the servers.</li>
+</ul></li>
+<li><strong>Power Distribution:</strong> Mount the <strong>Tripp-Lite
+20A PDU</strong> vertically in the rear of the rack (if supported) or at
+the top rear. Plug the Crystal Servers and Storage Node into the
+high-current outlets.</li>
+</ol>
+<hr />
+<h2 id="phase-2-sensors-instrumentation-timing">Phase 2: Sensors,
+Instrumentation &amp; Timing</h2>
+<ol type="1">
+<li><strong>SDR Mounting:</strong> Assemble the <strong>USRP
+N310</strong> into the <strong>Ettus 1U Rack Shelf</strong> and mount at
+U15.</li>
+<li><strong>Instrumentation:</strong> Install the <strong>Keysight
+MXG</strong> at U17 using the <strong>1CP010A Rack Kit</strong>.</li>
+<li><strong>Timing Standard:</strong> Mount the <strong>Brandywine
+NFS220</strong> at U19.</li>
+<li><strong>Utility Shelf:</strong> Install the <strong>StarTech
+Cantilever Shelf</strong> at U21 to hold the <strong>USRP B210</strong>
+and store the <strong>SMA Torque Wrench</strong>.</li>
+</ol>
+<hr />
+<h2 id="phase-3-the-heartbeat-timing-sync">Phase 3: The “Heartbeat”
+(Timing &amp; Sync)</h2>
+<p><em>Goal: Zero-jitter distribution of the 10MHz and 1PPS
+references.</em> 1. <strong>Antenna Feed:</strong> Run the
+<strong>LMR-240 cable</strong> from the external GPS antenna to the
+Brandywine’s <code>GPS IN</code> port. 2. <strong>Synchronized
+Ingest:</strong> * Connect (2) <strong>BNC-to-SMA</strong> cables from
+the Brandywine 10MHz OUT to the USRP N310. * Connect (2)
+<strong>BNC-to-SMA</strong> cables from the Brandywine 1PPS OUT to the
+USRP N310. * Connect (1) <strong>BNC-to-SSMC</strong> cable to the
+Sidekiq X4 (via external port) for 10MHz reference. * <strong>STRICT
+RULE:</strong> Ensure the physical lengths of these timing cables are
+identical to within 1 inch to maintain phase alignment.</p>
+<hr />
+<h2 id="phase-4-data-control-network">Phase 4: Data &amp; Control
+Network</h2>
+<ol type="1">
+<li><strong>High-Speed IQ Path:</strong> Connect (6) <strong>40G QSFP+
+DAC cables</strong> from the Crystal Servers to the Ruckus switch. This
+creates the massive data pipe for raw IQ streaming.</li>
+<li><strong>Management Network:</strong> Use the <strong>Cat6a Shielded
+Patch Cables</strong> to connect every management port (Servers, Switch,
+USRP, Brandywine, Keysight) to the Ruckus switch. This allows the system
+to be controlled entirely from a single remote IP.</li>
+<li><strong>Internal Control:</strong> Connect the <strong>Armored USB
+3.0 cables</strong> from the Server to the USRP B210.</li>
+<li><strong>Operator Interface:</strong> Connect the <strong>Engineering
+Workstation</strong> to a 10GbE port on the Ruckus switch using the
+<strong>Thunderbolt to 10GbE adapter</strong>. This provides the
+high-bandwidth link for real-time visualization.</li>
+</ol>
+<hr />
+<h2 id="phase-5-rf-safety-signal-path">Phase 5: RF Safety &amp; Signal
+Path</h2>
+<ol type="1">
+<li><strong>Receiver Protection (CRITICAL):</strong> Before any other RF
+work, screw the <strong>30dB SMA Attenuators</strong> directly onto
+every RX port of the USRP N310 and Sidekiq pigtails.</li>
+<li><strong>Signal Distribution:</strong> Connect the
+<strong>Phase-Stable SMA Cables</strong> from your antenna manifold to
+the attenuators.</li>
+<li><strong>Torque Validation:</strong> Use the <strong>8 in-lb Torque
+Wrench</strong> on every single SMA connection. Do not rely on
+hand-tightening; signal phase will drift if connections are
+inconsistent.</li>
+</ol>
+<hr />
+<h2 id="phase-6-system-commissioning">Phase 6: System Commissioning</h2>
+<ol type="1">
+<li><strong>Cold Boot Sequence:</strong>
+<ul>
+<li><strong>Step 1:</strong> Turn on the Ruckus Switch.</li>
+<li><strong>Step 2:</strong> Turn on the Brandywine Timing Standard.
+<strong>WAIT for GPS LOCK</strong> (Verify on front panel).</li>
+<li><strong>Step 3:</strong> Turn on the Mean Well DC Supply for the
+SDRs.</li>
+<li><strong>Step 4:</strong> Boot the Crystal Servers.</li>
+</ul></li>
+<li><strong>Software Validation:</strong>
+<ul>
+<li>Run <code>uhd_usrp_probe</code> -&gt; Verify
+<code>ref: external</code> and <code>pps: external</code>.</li>
+<li>Run <code>nvidia-smi</code> -&gt; Verify both A40 GPUs are present
+and memory is available.</li>
+<li>Run <code>Sidekiq_info</code> -&gt; Verify the PCIe card is detected
+and internal temp is stable.</li>
+</ul></li>
+</ol>
+<hr />
+<h2 id="phase-7-software-environment-setup">Phase 7: Software
+Environment Setup</h2>
+<ol type="1">
+<li><strong>OS Configuration:</strong> Install <strong>Ubuntu 22.04 LTS
+(RT Kernel)</strong> on the Crystal Servers. Enable hugepages to prevent
+buffer overflows during high-BW streaming.</li>
+<li><strong>SDR Drivers:</strong>
+<ul>
+<li>Install <strong>UHD 4.4+</strong> for the USRP N310.</li>
+<li>Install <strong>libsidekiq</strong> and the Epiq driver suite for
+the Sidekiq X4.</li>
+</ul></li>
+<li><strong>GPU Acceleration:</strong> Install <strong>CUDA
+12.x</strong> and <strong>cuFFT</strong>. Verify that the A40s can
+handle the 400MHz IQ stream using a sample CUDA ingest kernel.</li>
+<li><strong>Network Optimization:</strong> Configure the 40GbE
+interfaces with <strong>9000-byte MTU (Jumbo Frames)</strong> to ensure
+zero packet loss from the Ruckus switch.</li>
+</ol>
+<hr />
+<h2 id="phase-8-post-commissioning-maintenance">Phase 8:
+Post-Commissioning Maintenance</h2>
+<ol type="1">
+<li><strong>Thermal Baseline:</strong> Monitor GPU temperatures during a
+1-hour “All-Channels” ingest. Temp should not exceed 80°C.</li>
+<li><strong>RF Recalibration:</strong> Every 6 months, use the
+<strong>Keysight MXG</strong> to perform a system-wide gain/phase
+calibration.</li>
+<li><strong>SMA Connector Care:</strong> Periodically inspect RF
+pigtails. If the center pin appears retracted or damaged, replace the
+cable immediately to avoid intermittent phase errors.</li>
+</ol>
+<hr />
+<h2 id="phase-9-final-rf-integration-calibration-mission-mode">Phase 9:
+Final RF Integration &amp; Calibration (Mission Mode)</h2>
+<ol type="1">
+<li><strong>Antenna Manifold:</strong> Connect all external antennas
+(Discone, LPDA, DF Array) to the <strong>1U N-Type-to-SMA Patch
+Panel</strong>.</li>
+<li><strong>RF Matrix Wiring:</strong> Connect the internal side of the
+patch panel to the <strong>RF Matrix Switch</strong>. Use software to
+route specific antenna banks to the USRP N310 and Sidekiq X4.</li>
+<li><strong>Phase Matching (VNA):</strong> Use the <strong>Copper
+Mountain USB VNA</strong> to measure the electrical length of the four
+N310 input cables. All four paths must be phase-matched to within 2
+degrees at 2.4GHz for Direction Finding to be accurate.</li>
+<li><strong>VSA Software Link:</strong> Link the <strong>Keysight VSA
+software</strong> on the Workstation to the USRP N310. Verify that
+complex vector signals generated by the Keysight MXG are being correctly
+demodulated by the software tier.</li>
+</ol>
+<h1 id="project-apex-prowler-the-500000-dream-setup">PROJECT “APEX
+PROWLER” | THE $500,000 DREAM SETUP</h1>
+<p><strong>Strategic SIGINT/EW Sovereign Environment</strong></p>
+<p>This configuration represents the absolute pinnacle of current
+open-architecture RF engineering. It scales the baseline to
+<strong>40GHz</strong>, doubles the AI compute throughput, and provides
+a total of <strong>240TB</strong> of archival mission storage.</p>
+<hr />
+<h2 id="advanced-ingest-tier-expansion-to-40ghz">1. Advanced Ingest Tier
+(Expansion to 40GHz)</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Big Picture / Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="Project_APEX_PROWLER_Documentation.html"><strong>Foundation
+Kit</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">APEX PROWLER Part I, II, IV</td>
+<td style="text-align: left;">Core Infrastructure + Rec Improvements +
+Antennas.</td>
+<td style="text-align: left;">$375,984</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.pmi-rf.com/categories/down-converters"><strong>Millimeter
+Wave Downconverters</strong></a></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Custom 18-40GHz</td>
+<td style="text-align: left;"><strong>Frequency Expansion:</strong>
+Extends monitoring into K/Ka-Band.</td>
+<td style="text-align: left;">$24,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.ahsystems.com/catalog/horn-antennas.php"><strong>High-Gain
+Horn Antennas</strong></a></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">18-40GHz Dual-Pol</td>
+<td style="text-align: left;">Directional collection for high-frequency
+targets.</td>
+<td style="text-align: left;">$4,500</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.gore.com/products/categories/cables-cable-assemblies"><strong>40GHz
+Phase-Stable Cables</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Lab Set (Semi-Rigid)</td>
+<td style="text-align: left;"><strong>Precision:</strong> Required for
+low-loss 40GHz signal transport.</td>
+<td style="text-align: left;">$5,000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-super-compute-storage-backplane">2. The “Super-Compute”
+&amp; Storage Backplane</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Big Picture / Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.nvidia.com/en-us/data-center/l40s/"><strong>GPU
+Upgrade (A40 -&gt; L40S)</strong></a></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">NVIDIA L40S</td>
+<td style="text-align: left;"><strong>AI Powerhouse:</strong> Upgrades
+Part I servers to L40S GPUs (~$9k ea).</td>
+<td style="text-align: left;">$18,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.nvidia.com/en-us/networking/ethernet-adapters/"><strong>Mellanox
+100GbE NICs</strong></a></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">ConnectX-6</td>
+<td style="text-align: left;"><strong>Zero Bottleneck:</strong> 100GbE
+links for massive data.</td>
+<td style="text-align: left;">$3,200</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.fs.com/products/50497.html"><strong>100G QSFP28 AOC
+(3m)</strong></a></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><strong>ACTIVE</strong> Interconnect</td>
+<td style="text-align: left;"><strong>Signal Integrity:</strong> 100G
+Active Optical links for servers.</td>
+<td style="text-align: left;">$600</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.truenas.com/m-series/"><strong>Archival Storage (Tier
+2)</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">4U 24-Bay (120TB)</td>
+<td style="text-align: left;"><strong>Expansion:</strong> Adds a second
+node for <strong>240TB total storage</strong>.</td>
+<td style="text-align: left;">$16,500</td>
+</tr>
+</tbody>
+</table>
+<h2 id="laboratory-grade-instrumentation">3. Laboratory-Grade
+Instrumentation</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Big Picture / Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.rohde-schwarz.com/us/products/test-and-measurement/analyzers/rs-fsva3000-signal-and-spectrum-analyzer_63493-599540.html"><strong>Real-Time
+Spectrum Analyzer</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">R&amp;S FSVA3030</td>
+<td style="text-align: left;"><strong>Gapless Monitoring:</strong> 30GHz
+RTSA with 400MHz RTBW. <em>Refurb/Used.</em></td>
+<td style="text-align: left;">$20,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.microchip.com/en-us/product/sa-22c"><strong>Rubidium
+Frequency Standard</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Microchip SA.22c</td>
+<td style="text-align: left;"><strong>Atomic Stability:</strong>
+Upgrades timing to Rubidium physics.</td>
+<td style="text-align: left;">$4,500</td>
+</tr>
+</tbody>
+</table>
+<h2 id="hardened-infrastructure-field-opsec">4. Hardened Infrastructure
+&amp; Field OPSEC</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: left;">Model/Part #</th>
+<th style="text-align: left;">Big Picture / Justification</th>
+<th style="text-align: left;">Approx. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://www.equipto.com/r6-series/"><strong>EMI/RFI Shielded
+Rack</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Equipto R6 Series</td>
+<td style="text-align: left;"><strong>Security:</strong> 24U rack with
+80dB+ of attenuation.</td>
+<td style="text-align: left;">$1,800</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="https://www.eaton.com/us/en-us/catalog/backup-power-ups-surge-it-power-distribution/eaton-9px-ups.html"><strong>10kVA
+Double-Conversion UPS</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Eaton 9PX</td>
+<td style="text-align: left;"><strong>Total Isolation:</strong> Clean
+power and 30min+ runtime.</td>
+<td style="text-align: left;">$5,800</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="https://select-fabricators.com/rf-emi-shielding-tents/"><strong>Portable
+Shielded Tent</strong></a></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Select Fabricators</td>
+<td style="text-align: left;"><strong>Field OPSEC:</strong> Portable
+RF-quiet workspace for field ops.</td>
+<td style="text-align: left;">$8,000</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="budget-summary-the-dream-setup">BUDGET SUMMARY: THE DREAM
+SETUP</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Subtotal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Foundation (Part I, II,
+IV)</strong></td>
+<td style="text-align: left;">$375,984</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Microwave/mmWave Expansion (to
+40GHz)</strong></td>
+<td style="text-align: left;">$33,500</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Super-Compute &amp; Storage
+Expansion</strong></td>
+<td style="text-align: left;">$38,300</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Instrumentation Tier (RTSA +
+Rubidium)</strong></td>
+<td style="text-align: left;">$24,500</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Hardened
+Infrastructure</strong></td>
+<td style="text-align: left;">$7,600</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>GRAND TOTAL ESTIMATED
+COST</strong></td>
+<td style="text-align: left;"><strong>$479,884</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="technical-notes-for-ultra-horizon">Technical Notes for
+“Ultra-Horizon”:</h2>
+<ul>
+<li><strong>Active Optical Cables (AOC):</strong> All high-speed 100G
+links are specified as Active Optical to eliminate bit errors during
+40GHz captures.</li>
+<li><strong>The 40GHz Edge:</strong> Use the semi-rigid cable set for
+all 40GHz connections; standard coax will attenuate the signal too
+heavily.</li>
+<li><strong>RTSA Pricing:</strong> To stay under $500k, the RTSA budget
+is capped at $20k (Assumes high-end refurbished unit).</li>
+<li><strong>Storage Density:</strong> With 240TB of archival storage,
+the system can hold ~40 hours of continuous 400MHz raw IQ
+recordings.</li>
+</ul>
+</body>
+</html>
